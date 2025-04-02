@@ -17,7 +17,7 @@ const About = () => {
             <div className="col">
               <h2 className="section-title">The Beginning</h2>
               <p>
-                Founded in 2015, Gusto was born from a simple yet powerful vision: to create an 
+                Founded in 2015, Foie-Gras was born from a simple yet powerful vision: to create an 
                 exceptional dining experience that honors traditions while embracing innovation. 
                 Chef Maria Rossi, inspired by her Italian heritage and years of culinary training 
                 across Europe, wanted to bring a new perspective to fine dining.
@@ -90,7 +90,7 @@ const About = () => {
               <p className="member-title">Executive Chef & Founder</p>
               <p className="member-bio">
                 With over 20 years of experience in renowned kitchens across Italy and France, 
-                Chef Maria brings a wealth of knowledge and passion to Gusto. Her innovative 
+                Chef Maria brings a wealth of knowledge and passion to Foie-Gras. Her innovative 
                 approach to classic cuisine has earned her numerous accolades.
               </p>
             </div>
@@ -114,7 +114,7 @@ const About = () => {
               <p className="member-title">Pastry Chef</p>
               <p className="member-bio">
                 Sophia's exquisite pastries and desserts provide the perfect finale to the 
-                Gusto experience. Trained in Paris, her creations blend classic techniques 
+                Foie-Gras experience. Trained in Paris, her creations blend classic techniques 
                 with unexpected flavors and artistic presentation.
               </p>
             </div>

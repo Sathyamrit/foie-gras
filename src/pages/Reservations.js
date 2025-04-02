@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Reservation.css';
+import './Reservations.css';
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -122,7 +122,7 @@ const Reservation = () => {
                 <h3>Need Assistance?</h3>
                 <p>For special events, large parties, or other inquiries:</p>
                 <p><strong>Call:</strong> (123) 456-7890</p>
-                <p><strong>Email:</strong> reservations@gustorestaurant.com</p>
+                <p><strong>Email:</strong> reservations@foie-gras-restaurant.com</p>
               </div>
             </div>
             

@@ -85,8 +85,8 @@ const Contact = () => {
                   </div>
                   <div className="content">
                     <h3>Email Us</h3>
-                    <p>reservations@gustorestaurant.com</p>
-                    <p>info@gustorestaurant.com</p>
+                    <p>reservations@foie-grasrestaurant.com</p>
+                    <p>info@foie-grasrestaurant.com</p>
                   </div>
                 </div>
                 

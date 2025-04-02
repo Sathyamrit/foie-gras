@@ -22,10 +22,10 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col about-text">
-              <h2>Welcome to Gusto</h2>
+              <h2>Welcome to Foie-Gras</h2>
               <p className="tagline">Where Passion Meets Flavor</p>
               <p>
-                Nestled in the heart of the city, Gusto offers an extraordinary dining experience 
+                Nestled in the heart of the city, Foie-Gras offers an extraordinary dining experience 
                 that celebrates the essence of modern cuisine with a touch of tradition. Our culinary 
                 team creates memorable dishes using only the finest seasonal ingredients.
               </p>
