@@ -30,7 +30,7 @@ const About = () => {
             </div>
             <div className="col">
               <div className="about-image">
-                <img src="/api/placeholder/500/600" alt="Restaurant early days" />
+                <img src="https://placehold.co/500x600" alt="Restaurant early days" />
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ const About = () => {
           <div className="team-members">
             <div className="team-member">
               <div className="member-image">
-                <img src="/api/placeholder/400/400" alt="Chef Maria Rossi" />
+                <img src="https://placehold.co/400x400" alt="Chef Maria Rossi" />
               </div>
               <h3>Maria Rossi</h3>
               <p className="member-title">Executive Chef & Founder</p>
@@ -96,7 +96,7 @@ const About = () => {
             </div>
             <div className="team-member">
               <div className="member-image">
-                <img src="/api/placeholder/400/400" alt="Antonio Bianchi" />
+                <img src="https://placehold.co/400x400" alt="Antonio Bianchi" />
               </div>
               <h3>Antonio Bianchi</h3>
               <p className="member-title">Head Chef</p>
@@ -108,7 +108,7 @@ const About = () => {
             </div>
             <div className="team-member">
               <div className="member-image">
-                <img src="/api/placeholder/400/400" alt="Sophia Chen" />
+                <img src="https://placehold.co/400x400" alt="Sophia Chen" />
               </div>
               <h3>Sophia Chen</h3>
               <p className="member-title">Pastry Chef</p>

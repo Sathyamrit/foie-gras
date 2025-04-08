@@ -33,7 +33,9 @@ const Home = () => {
             </div>
             <div className="col about-image">
               <div className="img-container">
-                <img src="/api/placeholder/500/600" alt="Restaurant interior" />
+                {/* <img src="/api/placeholder/500/600" alt="Restaurant interior" /> */}
+                {/* <img src="https://picsum.photos/500/600" alt="Restaurant interior" /> */}
+                <img src="https://placehold.co/500x600" alt="Restaurant interior" />
               </div>
             </div>
           </div>
@@ -47,21 +49,21 @@ const Home = () => {
           <div className="menu-categories">
             <div className="menu-category">
               <div className="category-image">
-                <img src="/api/placeholder/300/300" alt="Starters" />
+                <img src="https://placehold.co/300x300" alt="Starters" />
               </div>
               <h3>Starters</h3>
               <p>Begin your culinary journey with our exquisite appetizers</p>
             </div>
             <div className="menu-category">
               <div className="category-image">
-                <img src="/api/placeholder/300/300" alt="Main Courses" />
+                <img src="https://placehold.co/300x300" alt="Main Courses" />
               </div>
               <h3>Main Courses</h3>
               <p>Savor our signature dishes crafted with passion</p>
             </div>
             <div className="menu-category">
               <div className="category-image">
-                <img src="/api/placeholder/300/300" alt="Desserts" />
+                <img src="https://placehold.co/300x300" alt="Desserts" />
               </div>
               <h3>Desserts</h3>
               <p>Complete your meal with our delectable sweet creations</p>
