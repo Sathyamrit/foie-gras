@@ -20,27 +20,41 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // This would normally connect to a backend API
-    console.log('Form submitted:', formData);
-    setFormSubmitted(true);
-    
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-    
-    // Reset the success message after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+  
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 5000);
+      } else {
+        const errorData = await response.json();
+        console.error('Server error:', errorData);
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+    }
   };
-
+  
+  
   return (
     <div className="contact-page">
       <div className="contact-header">

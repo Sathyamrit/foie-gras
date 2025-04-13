@@ -4,12 +4,14 @@ const cors = require('cors');
 require('dotenv').config();
 
 const reservationRoutes = require('./routes/reservationRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/reservations', reservationRoutes);
+app.use('/api/contact', contactRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
