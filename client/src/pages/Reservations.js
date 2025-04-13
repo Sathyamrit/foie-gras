@@ -54,29 +54,45 @@ const Reservation = () => {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // This would normally connect to a backend API
-    console.log('Reservation submitted:', formData);
-    setFormSubmitted(true);
-    
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      date: '',
-      time: '',
-      guests: '2',
-      occasion: '',
-      specialRequests: ''
-    });
-    
-    // Reset the success message after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      if (response.ok) {
+        setFormSubmitted(true);
+        console.log("Reservation submitted successfully!");
+  
+        // Clear form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+          guests: '2',
+          occasion: '',
+          specialRequests: ''
+        });
+  
+        // Hide message after 5 sec
+        setTimeout(() => setFormSubmitted(false), 5000);
+      } else {
+        console.error("Failed to submit reservation");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+    }
   };
+  
+  
 
   // Get today's date for min date attribute
   const today = new Date().toISOString().split('T')[0];
