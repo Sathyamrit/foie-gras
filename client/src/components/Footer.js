@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">Gusto</h3>
+            <h3 className="footer-title">Foie-Gras</h3>
             <p>Experience authentic flavors and elegant dining at our premier restaurant. We offer a comfortable atmosphere with exceptional service.</p>
             <div className="social-links">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
