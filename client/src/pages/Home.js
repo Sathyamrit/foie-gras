@@ -13,6 +13,7 @@ const Home = () => {
           <div className="hero-buttons">
             <Link to="/reservations" className="btn btn-primary">Book a Table</Link>
             <Link to="/menu" className="btn btn-outline">View Menu</Link>
+            <Link to="/manager" className="btn btn-primary">Login</Link>
           </div>
         </div>
       </section>

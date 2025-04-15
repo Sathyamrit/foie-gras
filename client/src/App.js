@@ -7,6 +7,7 @@ import Menu from './pages/Menu';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Reservations from './pages/Reservations';
+import Manager from './pages/Manager';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/reservations" element={<Reservations />} />
+            <Route path="/manager" element={<Manager />} />
           </Routes>
         </main>
         <Footer />
