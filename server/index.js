@@ -1,34 +1,38 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const serverless = require('serverless-http');
 require('dotenv').config();
 
 const app = express();
 
-app.use(cors(
-  {
-    origin: 'https://foie-gras-client.vercel.app', // Replace with your frontend URL
-    methods: ['GET', 'POST'],
-    credentials: true // Allow credentials (cookies, authorization headers, etc.)
-  }
-));
+// Middleware
+app.use(cors({
+  origin: 'https://foie-gras-client.vercel.app', // Your frontend on Vercel
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json());
 
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.error('MongoDB connection error:', err));
 
-// Basic test route
+// Routes
 app.get('/', (req, res) => {
   res.send('API is working!');
 });
 
 app.post('/api/reservations', (req, res) => {
-  // Logic to handle form submission goes here
-  res.json({ message: 'Reservation received' });
+  // Your form data comes in req.body
+  console.log('Reservation received:', req.body);
+
+  // You can add MongoDB logic here if needed
+  res.status(200).json({ message: 'Reservation received' });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export handler for Vercel
+module.exports = serverless(app);
