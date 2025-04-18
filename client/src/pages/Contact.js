@@ -24,7 +24,8 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      // const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,6 +42,12 @@ const Contact = () => {
           subject: '',
           message: ''
         });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("Failed to submit:", errorData.message || response.statusText);
+          return;
+        }        
   
         setTimeout(() => {
           setFormSubmitted(false);
