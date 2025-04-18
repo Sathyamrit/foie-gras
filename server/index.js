@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: '', // Replace with your frontend URL
+    origin: 'https://foie-gras-client.vercel.app', // Replace with your frontend URL
     methods: ['GET', 'POST'],
     credentials: true // Allow credentials (cookies, authorization headers, etc.)
   }
