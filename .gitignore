@@ -13,14 +13,14 @@ client/coverage/
 # === Production Builds ===
 client/build/
 
-# === Environment Variables ===
-client/.env
-client/.env.local
-client/.env.development.local
-client/.env.test.local
-client/.env.production.local
-# server/.env
-server/.env.local
+# # === Environment Variables ===
+# client/.env
+# client/.env.local
+# client/.env.development.local
+# client/.env.test.local
+# client/.env.production.local
+# # server/.env
+# server/.env.local
 
 # === Miscellaneous ===
 .DS_Store
