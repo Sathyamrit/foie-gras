@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Reservations.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -60,7 +60,8 @@ const Reservation = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch("http://localhost:5000/api/reservations", {
+      // const response = await fetch("http://localhost:5000/api/reservations", {
+      const response = await fetch(`${API_BASE_URL}/api/reservations`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -83,6 +84,12 @@ const Reservation = () => {
           occasion: '',
           specialRequests: ''
         });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Failed to submit:", errorData.message || response.statusText);
+        return;
+      }        
   
         // Hide message after 5 sec
         setTimeout(() => setFormSubmitted(false), 5000);
