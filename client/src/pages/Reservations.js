@@ -75,13 +75,13 @@ const Reservation = () => {
   
         // Clear form
         setFormData({
-          name: 'Josephine Doe',
-          email: 'josephine@email.com',
-          phone: '1234567890',
-          date: '11-01-2023',
-          time: '11:00 AM',
-          guests: '2',
-          occasion: 'Bithday',
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+          guests: '',
+          occasion: '',
           specialRequests: ''
         });
 

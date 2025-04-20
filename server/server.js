@@ -4,22 +4,25 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
 
+const app = express();
+
 // Route files
 const reservationRoutes = require('./routes/reservationRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 
-const app = express();
-const PORT = process.env.PORT || 5000;
-
 // Middleware
 app.use(cors(
   {
-    origin: 'https://foie-gras-client.vercel.app', // Your frontend on Vercel
+    origin: ['http://localhost:3000','https://foie-gras-client.vercel.app'],  // Frontend URL
     methods: ['GET', 'POST'],
     credentials: true
   }
 ));
 app.use(express.json());
+
+// Use route modules
+app.use('/api/reservations', reservationRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Test route for base URL
 // app.get('/', (req, res) => {
@@ -29,9 +32,6 @@ app.use(express.json());
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Use route modules
-app.use('/api/reservations', reservationRoutes);
-app.use('/api/contact', contactRoutes);
 
 // MongoDB connection and server start
 mongoose.connect(process.env.MONGO_URI, {
@@ -47,3 +47,5 @@ mongoose.connect(process.env.MONGO_URI, {
   })
   .catch(err => console.error('❌ MongoDB connection error:',err));
   
+// Default
+const PORT = process.env.PORT || 5000;
