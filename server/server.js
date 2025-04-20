@@ -21,9 +21,12 @@ app.use(cors(
 app.use(express.json());
 
 // Test route for base URL
-app.get('/', (req, res) => {
-  res.send('🚀 Server is running! API is working.');
-});
+// app.get('/', (req, res) => {
+//   res.send('🚀 Server is running! API is working.');
+// });
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Use route modules
 app.use('/api/reservations', reservationRoutes);
