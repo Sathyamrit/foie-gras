@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
